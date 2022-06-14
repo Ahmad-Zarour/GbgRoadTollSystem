@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoadTollSystem", "RoadTollSystem\RoadTollSystem.csproj", "{EB9EEFED-E4D3-46BF-A762-E71A01070B13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoadTollSystemTest", "GbgRoadTollSystemTest\RoadTollSystemTest.csproj", "{EF752BA9-850F-4ED5-BF10-0692D18FB264}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB9EEFED-E4D3-46BF-A762-E71A01070B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB9EEFED-E4D3-46BF-A762-E71A01070B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB9EEFED-E4D3-46BF-A762-E71A01070B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB9EEFED-E4D3-46BF-A762-E71A01070B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF752BA9-850F-4ED5-BF10-0692D18FB264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF752BA9-850F-4ED5-BF10-0692D18FB264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF752BA9-850F-4ED5-BF10-0692D18FB264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF752BA9-850F-4ED5-BF10-0692D18FB264}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7855B69-5B05-4087-9DDE-8884525595DA}
+	EndGlobalSection
+EndGlobal
