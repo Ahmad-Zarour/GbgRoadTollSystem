@@ -7,6 +7,7 @@ namespace RoadTollSystemTest
         [Fact]
         public void GetDayFeeDataFromJsonFile_ReturnValidData()
         {
+            //Json files must be located in project execution path
             var dataFromJsonFile = JsonFileReader.GetDayFeeDataFromJsonFile
                 (Path.Combine(Directory.GetCurrentDirectory(), "tollFeeData.json"));
             // data format before serialization to Json file
@@ -23,7 +24,7 @@ namespace RoadTollSystemTest
         [Fact]
         public void GetHolydaysDataFromJson_ReturnValidData()
         {
-
+            //Json files must be located in project execution path
             var dataFromJsonFile = JsonFileReader.GetHolydaysDataFromJson
                 (Path.Combine(Directory.GetCurrentDirectory(), "holydayData.json"));
 

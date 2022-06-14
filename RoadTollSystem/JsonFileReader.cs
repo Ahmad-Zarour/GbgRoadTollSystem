@@ -4,6 +4,8 @@
 
     public static class JsonFileReader
     {
+        //Json files must be located in project execution path
+
         // Get data from Json file for toll fee
         public static IList<FeePerDay> GetDayFeeDataFromJsonFile (string filePath)
         {
