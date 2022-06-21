@@ -1,20 +1,27 @@
 ﻿namespace RoadTollSystem
 {
+    //Skatt tas inte ut helgdag, dag före helgdag eller under juli månad.
     public class NoFeeDayOperation
     {
-        public NoFeeDayOperation(IList<DateOnly> holydayData)
+        public NoFeeDayOperation(IList<DateOnly> holidayData)
         {
-            this.holydayData = holydayData;
+            this.holidayData = holidayData;
         }
 
-        private  IList<DateOnly> holydayData;
-        readonly DateOnly monthOfJuly = new DateOnly(2022, 07, 01);
+        private  IList<DateOnly> holidayData;
+        readonly DateOnly monthOfJuly = new (2022, 07, 01);
 
 
-        // check the date if it's is a public holiday
+        // check the date if it's  a public holiday
         public bool CheckIfHoliday(DateOnly date)
         {
-            return holydayData.Any(x => x == date);
+            return holidayData.Any(x => x == date);
+        }
+
+        // check if the date is a day before the public holiday
+        public bool CheckIfDayBeforeHoliday(DateOnly date)
+        {
+            return holidayData.Any(x => x == date.AddDays(1));
         }
 
         // check the date if it's a weekend, sat , sun 

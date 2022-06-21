@@ -25,8 +25,8 @@ namespace RoadTollSystemTest
         public void GetHolydaysDataFromJson_ReturnValidData()
         {
             //Json files must be located in project execution path
-            var dataFromJsonFile = JsonFileReader.GetHolydaysDataFromJson
-                (Path.Combine(Directory.GetCurrentDirectory(), "holydayData.json"));
+            var dataFromJsonFile = JsonFileReader.GetHolidaysDataFromJson
+                (Path.Combine(Directory.GetCurrentDirectory(), "holidayData.json"));
 
             IList<DateOnly> holidays = new List<DateOnly> {
                 new DateOnly(2022,01,05),

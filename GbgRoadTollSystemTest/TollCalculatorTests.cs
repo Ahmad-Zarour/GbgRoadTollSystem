@@ -5,8 +5,8 @@ namespace GbgRoadTollSystemTest
         public  VehicleRouls vehicleRouls = new();
         public  NoFeeDayOperation? noFeeDayOperation;
         public FeePerDayOperation? feePerDayOperation;
-        IList<DateOnly> holydaysData = JsonFileReader.GetHolydaysDataFromJson
-               (Path.Combine(Directory.GetCurrentDirectory(), "holydayData.json"));
+        IList<DateOnly> holydaysData = JsonFileReader.GetHolidaysDataFromJson
+               (Path.Combine(Directory.GetCurrentDirectory(), "holidayData.json"));
         IList<FeePerDay> FeeData = JsonFileReader.GetDayFeeDataFromJsonFile
                (Path.Combine(Directory.GetCurrentDirectory(), "tollFeeData.json"));
         

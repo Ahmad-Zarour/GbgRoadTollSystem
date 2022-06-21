@@ -20,10 +20,8 @@
             // using the TimeOnlyConverter class 
             options.Converters.Add(new TimeOnlyConverter());
 
-            //var jsonData = JsonSerializer.Deserialize<IList<DateOnly>>(jsonString, options);
-
             var DataFromJson = JsonSerializer.Deserialize<List<FeePerDay>>(jsonText, options);
-            if(DataFromJson == null)
+            if(DataFromJson is null)
                 throw new ArgumentNullException
                    ("Something went wrong! please check the Json file content");
             else 
@@ -32,7 +30,7 @@
         }
 
         // Get data from Json file for holydays of the year
-        public static IList<DateOnly> GetHolydaysDataFromJson(string filePath)
+        public static IList<DateOnly> GetHolidaysDataFromJson(string filePath)
         {
             if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
             {
@@ -42,11 +40,10 @@
             }
             var jsonText = File.ReadAllText(filePath);
             var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
-            // using the DateOnlyConverter class to set the DateOnly format as "yyyy'-'MM'-'dd"
             options.Converters.Add(new DateOnlyConverter());
             var DataFromJson = System.Text.Json.JsonSerializer.Deserialize<IList<DateOnly>>(jsonText, options);
 
-            if (DataFromJson == null)
+            if (DataFromJson is null)
                 throw new ArgumentNullException
                    ("Something went wrong! please check the Json file content");
             return DataFromJson;
@@ -82,7 +79,7 @@
             var options = new JsonSerializerOptions(JsonSerializerDefaults.Web);
             options.Converters.Add(new DateOnlyConverter());
             var jsonFormattedContent = System.Text.Json.JsonSerializer.Serialize(holidays, options);
-            string filename = @"d:\\holydayData.json";
+            string filename = @"d:\\holidayData.json";
             File.WriteAllText(filename, jsonFormattedContent);
 
         }
@@ -96,7 +93,7 @@
         new FeePerDay(16,new TimeOnly( 06,30,00, 000),new TimeOnly( 06,59,59,999)),
         new FeePerDay(22,new TimeOnly( 07,00,00, 000),new TimeOnly( 07,59,59,999)),
         new FeePerDay(16,new TimeOnly( 08,00,00, 000),new TimeOnly( 08,29,59,999)),
-        new FeePerDay(9 ,new TimeOnly( 08,30,00,000),new TimeOnly( 14,59,59,999)),
+        new FeePerDay(9 ,new TimeOnly( 08,30,00, 000),new TimeOnly( 14,59,59,999)),
         new FeePerDay(16,new TimeOnly( 15,00,00, 000),new TimeOnly( 15,29,59,999)),
         new FeePerDay(22,new TimeOnly( 15,30,00, 000),new TimeOnly( 16,59,59,999)),
         new FeePerDay(16,new TimeOnly( 17,30,00, 000),new TimeOnly( 17,59,59,999)),

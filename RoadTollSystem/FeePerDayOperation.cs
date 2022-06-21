@@ -8,14 +8,14 @@
             this.feePerDayData = feePerDayData;
         }
 
-        private  IList<FeePerDay> feePerDayData;
+        private IList<FeePerDay> feePerDayData;
 
 
         // GetFeeInCertainTime return the toll fee of certain period 
-        public double? GetFeeInCertainTime(TimeOnly timeOfDay)
+        public decimal? GetFeeInCertainTime(TimeOnly timeOfDay)
         {
             var currentFee = feePerDayData.FirstOrDefault(x => timeOfDay.IsBetween(x.StartTime, x.EndTime));
-            return (currentFee?.Cost);
+            return currentFee?.Cost;
         }
 
         // Method to return list of time period of an hour time span and its fee
@@ -36,10 +36,10 @@
         }
 
         //Method to sum  all toll fee cost for one Day
-        public double SumTotalFee(DateTime[] dateTimes)
+        public decimal SumTotalFee(DateTime[] dateTimes)
         {
             return dateTimes.Select(dateTime => GetFeeInCertainTime(TimeOnly.FromDateTime(dateTime)))
-            .Aggregate(0.0, (present, cost) => present < cost ? cost.Value : present);
+            .Aggregate(0.0M, (present, cost) => present < cost ? cost.Value : present);
         }
 
     }

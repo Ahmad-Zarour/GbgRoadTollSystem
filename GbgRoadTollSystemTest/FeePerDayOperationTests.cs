@@ -24,9 +24,9 @@ namespace RoadTollSystemTest
             var thirdResult3 = feePerDayOperation.GetFeeInCertainTime(thirdTimes);
 
             //Actual fee in certain time
-            double feeFirstTime = 9;
-            double feeSecondTimes = 22;
-            double feeThirdTime = 16;
+            decimal feeFirstTime = 9;
+            decimal feeSecondTimes = 22;
+            decimal feeThirdTime = 16;
 
             Assert.Equal(feeFirstTime, firstResult);
             Assert.Equal(feeSecondTimes, secondResult2);
